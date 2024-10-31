@@ -1,0 +1,14 @@
+{
+    "name": "leconfe/quick-submit",
+    "autoload": {
+        "psr-4": {
+            "QuickSubmit\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leconfe"
+        }
+    ],
+    "require": {}
+}
