@@ -3,6 +3,3 @@ folder: QuickSubmit
 author: 'Leconfe'
 description: 'One-step submission plugin'
 version: 1.0.0
-enable: 
-  - test
-  
