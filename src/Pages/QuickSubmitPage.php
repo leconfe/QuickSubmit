@@ -156,6 +156,8 @@ class QuickSubmitPage extends Page implements HasForms
                                                 ->toArray(),
                                         ]
                                     ),
+                                TextInput::make('meta.isbn')
+                                    ->label("ISBN"),
                                 TextInput::make('meta.article_pages')
                                     ->label(__('general.pages'))
                                     ->maxWidth('xs')
@@ -182,7 +184,6 @@ class QuickSubmitPage extends Page implements HasForms
             $data['stage'] = SubmissionStage::CallforAbstract;
             $data['status'] = SubmissionStatus::Queued;
         }
-
 
         try {
             $submission = SubmissionUpdateAction::run(
