@@ -193,7 +193,7 @@ class QuickSubmitPage extends Page implements HasForms
 
             $this->form->model($submission)->saveRelationships();
 
-            Notification::make('success')
+            Notification::make()
                 ->success()
                 ->title(__('general.saved'))
                 ->send();
