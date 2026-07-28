@@ -8,37 +8,37 @@ use App\Models\Track;
 use App\Panel\ScheduledConference\Livewire\Submissions\Components\ContributorList;
 use App\Panel\ScheduledConference\Livewire\Submissions\Components\GalleyList;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Livewire;
 use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Filament\Pages\Page;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Livewire;
-use Filament\Schemas\Components\Section;
-use Filament\Schemas\Components\Utilities\Get;
-use Filament\Schemas\Schema;
+use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Pages\Page as FilamentPage;
 use QuickSubmit\Pages\Concerns\HandlesQuickSubmit;
 
-class QuickSubmitPage extends Page implements HasForms
+class QuickSubmitPageV3 extends FilamentPage implements HasForms
 {
     use HandlesQuickSubmit;
     use InteractsWithForms;
 
     protected static ?string $title = 'Quick Submit';
 
-    protected string $view = 'QuickSubmit::quick-submit';
+    protected static string $view = 'QuickSubmit::quick-submit';
 
     protected static bool $shouldRegisterNavigation = false;
 
     protected static ?string $slug = 'quicksubmit';
 
-    public function form(Schema $schema): Schema
+    public function form(Form $form): Form
     {
-        return $schema
+        return $form
             ->model($this->submission)
             ->schema([
                 Section::make()
@@ -116,7 +116,6 @@ class QuickSubmitPage extends Page implements HasForms
                                     ->required(),
                             ]),
                     ]),
-
             ])
             ->statePath('data');
     }
