@@ -10,5 +10,7 @@
             "name": "Leconfe"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8.3"
+    }
 }

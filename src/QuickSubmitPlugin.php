@@ -11,7 +11,7 @@ class QuickSubmitPlugin extends Plugin
 {
     public function boot()
     {
-        
+
     }
 
     public function onPanel(Panel $panel): void
